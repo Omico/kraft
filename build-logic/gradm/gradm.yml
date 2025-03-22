@@ -1,0 +1,42 @@
+versions:
+  consensus: "0.19.1"
+  elucidator: "0.15.0"
+  kotlinpoet: "2.0.0"
+  plugins:
+    develocity: "3.19.2"
+    shadow: "9.0.0-beta11"
+  swaggerCodegen: "3.0.68"
+
+repositories:
+  omico:
+  mavenCentral:
+  gradlePluginPortal:
+
+plugins:
+  gradlePluginPortal:
+    com.gradle.develocity: ${versions.plugins.develocity}
+    com.gradleup.shadow: ${versions.plugins.shadow}
+
+dependencies:
+  gradlePluginPortal:
+    org.gradle.kotlin:
+      gradle-kotlin-dsl-plugins:
+        alias: gradleKotlinDslPlugins
+  mavenCentral:
+    com.squareup:
+      kotlinpoet:
+        alias: kotlinpoet
+        version: ${versions.kotlinpoet}
+    io.swagger.codegen.v3:
+      swagger-codegen:
+        alias: swagger.v3.codegen
+        version: ${versions.swaggerCodegen}
+  omico:
+    me.omico.consensus:
+      consensus-gradle-plugins:
+        alias: consensusGradlePlugins
+        version: ${versions.consensus}
+    me.omico.elucidator:
+      elucidator:
+        alias: elucidator
+        version: ${versions.elucidator}
